@@ -1,3 +1,8 @@
+PATH
+  remote: .
+  specs:
+    motion-egg (0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -7,4 +12,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  motion-egg!
   rake
