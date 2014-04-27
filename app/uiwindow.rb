@@ -48,6 +48,7 @@ class UIWindow
     p "************* OMG THE CODEZ! *************" 
     insert_egg
     show_egg
+    NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: 'hide_egg:', userInfo: nil, repeats: false)
   end
 
   def show_egg(timing = 0.5)
@@ -59,17 +60,18 @@ class UIWindow
         @egg_view.frame = showingFrame
       },
       completion:lambda {|finished|
+        #pause_egg
       }
     )
   end
 
-  def hide_egg(timing = 0.5)
-    # Animate the card out of the view:
-    UIView.animateWithDuration(timing,
+  def hide_egg(sender)
+    # Animate the egg out of the view:
+    UIView.animateWithDuration(0.5,
       delay:0.0,
       options:UIViewAnimationOptionCurveLinear,
       animations: lambda {
-        @egg_view.frame = hiddenFrame
+        @egg_view.frame = hidden_frame
       },
       completion:nil
     )
