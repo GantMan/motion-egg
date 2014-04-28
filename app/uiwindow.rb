@@ -60,7 +60,6 @@ class UIWindow
         @egg_view.frame = showingFrame
       },
       completion:lambda {|finished|
-        #pause_egg
       }
     )
   end
@@ -79,29 +78,30 @@ class UIWindow
 
   def insert_egg
     @egg_view ||= begin
-      egg_view = UIView.new
-      egg_view.backgroundColor = UIColor.blackColor
-      #egg_view.addSubview()
+      egg_view = UIImageView.alloc.initWithFrame([[0,0],[egg_width, egg_height]]) #UIView.new
+      egg_view.contentMode = UIViewContentModeScaleAspectFit
+      egg_view.image = UIImage.imageNamed("toasty.png")
       egg_view.frame = hidden_frame
       egg_view
     end
- 
-    # Add stuff to the egg
-    #@egg_view.addSubview(something_here)
  
     # We want to add the view to the root view
     UIApplication.sharedApplication.keyWindow.subviews.objectAtIndex(0).nextResponder.view.addSubview(@egg_view)
   end  
 
   def hidden_frame
-    [[0,UIScreen.mainScreen.bounds.size.height + egg_height],[UIScreen.mainScreen.bounds.size.width, egg_height]]
+    [[0,UIScreen.mainScreen.bounds.size.height + egg_height],[egg_width, egg_height]]
   end
 
   def showingFrame
-    [[0,UIScreen.mainScreen.bounds.size.height - egg_height],[UIScreen.mainScreen.bounds.size.width, egg_height]]
+    [[0,UIScreen.mainScreen.bounds.size.height - egg_height],[egg_width, egg_height]]
   end  
 
   def egg_height
-    200
+    180
+  end
+
+  def egg_width
+    UIScreen.mainScreen.bounds.size.width
   end
 end

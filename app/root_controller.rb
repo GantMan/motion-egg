@@ -1,7 +1,7 @@
 class RootController < UIViewController
 
   def viewDidLoad
-    view.backgroundColor = UIColor.whiteColor
+    view.backgroundColor = UIColor.grayColor
   end
 
 end
