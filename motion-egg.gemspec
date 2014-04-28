@@ -1,6 +1,5 @@
 # -*- encoding: utf-8 -*-
-
-Version = "0.1"
+require File.expand_path('../lib/motion_egg/version', __FILE__)
 
 Gem::Specification.new do |spec|
   spec.name = 'motion-egg'
@@ -8,12 +7,13 @@ Gem::Specification.new do |spec|
   spec.description = "motion-egg lets you perform the Konami code and get a lovely surprise in your app" 
   spec.author = 'Gant Laborde'
   spec.email = 'gant@iconoclastlabs.com'
-  spec.homepage    = "https://github.com/gantman/motion-egg"
-  spec.version = Version
+  spec.homepage    = "https://github.com/GantMan/motion-egg"
+  spec.version = MotionEgg::VERSION
+  spec.license       = "MIT"
 
   files = []
-  # files << 'README.md'
-  # files << 'LICENSE'
   files.concat(Dir.glob('lib/**/*.rb'))
   spec.files = files
+  spec.require_paths = ["lib"]
+  spec.add_development_dependency("rake")
 end

@@ -1,4 +1,6 @@
 class UIWindow
+  attr_accessor :current_code
+  
   TOUCHES = 1
   KONAMI = [
     UISwipeGestureRecognizerDirectionUp, UISwipeGestureRecognizerDirectionUp, 

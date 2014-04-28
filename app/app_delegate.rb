@@ -1,7 +1,5 @@
 class AppDelegate
 
-  attr_accessor :current_code
-
   def application(application, didFinishLaunchingWithOptions:launchOptions)
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
     @window.rootViewController = RootController.new
