@@ -2,7 +2,12 @@
 
 ## Wat?
 
-This gem allows you hide a small bit of fun in any of your serious apps.  Have a girl to impress?  Want to feature some of your good friends in apps that they have no business being in?  Have all the fun, without writing any of the code.
+This gem allows you hide a small bit of fun in any of your serious apps.  
+* Have a girl to impress?  
+* Want to feature some of your good friends in apps that they have no business being in?
+* Need to add your flair to a product?
+ 
+**Have all the fun, without writing any of the code.**
 
 ![screen-demo](./_art/motion-egg-screen.gif)
 
@@ -31,3 +36,4 @@ It would be really cool if you can think of ways to improve this gem, but keep i
 * Hoping to eventually add sound 
 * Hoping to add alternate animations
 * Hoping to make the egg more configurable
+* Hoping to possibly show an interactive view, and not just an image
