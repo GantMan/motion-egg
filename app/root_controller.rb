@@ -8,6 +8,7 @@ class RootController < UIViewController
                   DOWN, DOWN, \n
                   LEFT, RIGHT, \n
                   LEFT, RIGHT"
+    @label.accessibilityLabel = "main"
     @label.numberOfLines = 0
     @label.font = UIFont.systemFontOfSize(16)
     @label.sizeToFit
