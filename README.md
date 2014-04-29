@@ -14,8 +14,6 @@ Once the gem is included, call `add_egg` on the `UIWindow` created in `app_deleg
 @window.add_egg
 ```
 
-*TOTALLY SHOW ANIMATION OF THE GEM IN PROGRESS HERE*
-
 ## Installation
 
 > 1. `gem install motion-egg`
@@ -27,3 +25,9 @@ OR
 ## Pull Requests
 
 It would be really cool if you can think of ways to improve this gem, but keep it small and unintrusive!
+
+## Roadmap/Features - PRs welcome
+
+* Hoping to eventually add sound 
+* Hoping to add alternate animations
+* Hoping to make the egg more configurable
