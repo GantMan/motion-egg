@@ -1,6 +1,3 @@
-motion-egg
-==========
-
 ![motion-egg-explain](./_art/motion-egg-explain.png)
 
 ## Usage
@@ -19,7 +16,7 @@ Once the gem is included, call `add_egg` on the `UIWindow` created in `app_deleg
 
 OR
 
-> 2. Add `require 'motion-egg'` to your `Rakefile`
+> 2. Add `gem 'motion-egg'` to your `Gemfile` and then bundle
 
 ## Pull Requests
 
