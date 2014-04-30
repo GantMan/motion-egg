@@ -1,5 +1,5 @@
 class Egg
-  attr_accessor :number_touches, :secret_code, :image_file
+  attr_accessor :number_touches, :secret_code, :image_file, :current_code
 
   DEFAULT_TOUCHES = 1
   KONAMI = [
@@ -59,13 +59,14 @@ class Egg
     UIApplication.sharedApplication.keyWindow.subviews.objectAtIndex(0).nextResponder.view.addSubview(@egg_view)
   end  
 
-  def current_code=(value)
-    @current_code = value
-    p @current_code
-  end
+  def add_code new_direction
+    @current_code ||= Array.new
+    @current_code.push(new_direction)
 
-  def current_code
-    @current_code
+    # Only keep the last @current_code.size entries
+    @current_code = @current_code[-secret_code.size..-1] if @current_code.size > secret_code.size 
+    #p @current_code
+    activate if secret_code == @current_code
   end
 
   def number_touches

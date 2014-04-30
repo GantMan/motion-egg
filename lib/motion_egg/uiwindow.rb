@@ -32,12 +32,7 @@ class UIWindow
 
   # each recognizer should have a direction, but you can send them all to the same function!
   def handle_swipe(sender)
-    @egg.current_code ||= Array.new
-    @egg.current_code.push(sender.direction)
-
-    # Only keep the last 
-    @egg.current_code = @egg.current_code[-8..-1] if @egg.current_code.size > 8
-    @egg.activate if @egg.secret_code == @egg.current_code
+    @egg.add_code(sender.direction)
   end  
 
 end
