@@ -1,9 +1,9 @@
 class UIWindow
 
-  def add_egg
+  def add_egg(options = {})
 
     # Easter egg workhorse
-    @egg = Egg.new
+    @egg = Egg.new options
 
     #left
     @swipe_gesture_left = UISwipeGestureRecognizer.alloc.initWithTarget(self, action:"handle_swipe:")

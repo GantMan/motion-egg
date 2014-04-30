@@ -1,5 +1,5 @@
 class Egg
-  attr_accessor :number_touches, :secret_code, :image_file, :current_code
+  attr_accessor :number_touches, :current_code
 
   DEFAULT_TOUCHES = 1
   KONAMI = [
@@ -9,12 +9,12 @@ class Egg
     UISwipeGestureRecognizerDirectionLeft, UISwipeGestureRecognizerDirectionRight
   ]
 
-  def initialize 
-
+  def initialize (opts = {})
+    @options = {secret_code: KONAMI, number_touches: DEFAULT_TOUCHES, image_file: "toasty.png"}.merge(opts)
   end
 
   def activate
-    p "************* OMG THE CODEZ! *************" 
+    #p "************* OMG THE CODEZ! *************" 
     insert_egg
     show_egg
     NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: 'hide_egg:', userInfo: nil, repeats: false)
@@ -51,7 +51,7 @@ class Egg
     @egg_view ||= begin
       egg_view = UIImageView.alloc.initWithFrame(hidden_frame)
       egg_view.contentMode = UIViewContentModeScaleAspectFit
-      egg_view.image = UIImage.imageNamed(image_file)
+      egg_view.image = UIImage.imageNamed(@options[:image_file])
       egg_view
     end
  
@@ -64,21 +64,13 @@ class Egg
     @current_code.push(new_direction)
 
     # Only keep the last @current_code.size entries
-    @current_code = @current_code[-secret_code.size..-1] if @current_code.size > secret_code.size 
+    @current_code = @current_code[-@options[:secret_code].size..-1] if @current_code.size > @options[:secret_code].size 
     #p @current_code
-    activate if secret_code == @current_code
+    activate if @options[:secret_code] == @current_code
   end
 
   def number_touches
-    @number_touches || DEFAULT_TOUCHES
-  end
-
-  def secret_code
-    @secret_code || KONAMI
-  end
-
-  def image_file
-    @image_file || "toasty.png"
+    @options[:number_touches]
   end
 
   def hidden_frame
