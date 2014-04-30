@@ -1,5 +1,4 @@
 class UIWindow
-  attr_accessor :current_code
 
   def add_egg
 
@@ -33,60 +32,12 @@ class UIWindow
 
   # each recognizer should have a direction, but you can send them all to the same function!
   def handle_swipe(sender)
-    @current_code ||= Array.new
-    @current_code.push(sender.direction)
+    @egg.current_code ||= Array.new
+    @egg.current_code.push(sender.direction)
 
     # Only keep the last 
-    @current_code = @current_code[-8..-1] if @current_code.size > 8
-    p @current_code
-    code_performed if @egg.secret_code == @current_code
-  end  
-
-  # Code performed!
-  def code_performed
-    p "************* OMG THE CODEZ! *************" 
-    insert_egg
-    show_egg
-    NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: 'hide_egg:', userInfo: nil, repeats: false)
-  end
-
-  def show_egg(timing = 0.5)
-    # Animate the egg into the view:
-    UIView.animateWithDuration(timing,
-      delay:0.0,
-      options:UIViewAnimationOptionCurveLinear,
-      animations: lambda {
-        @egg_view.frame = @egg.show_frame
-      },
-      completion:lambda {|finished|
-      }
-    )
-  end
-
-  def hide_egg(sender)
-    # Animate the egg out of the view:
-    UIView.animateWithDuration(0.5,
-      delay:0.0,
-      options:UIViewAnimationOptionCurveLinear,
-      animations: lambda {
-        @egg_view.frame = @egg.hidden_frame
-      },
-      completion:lambda {|finished|
-        #consider removing egg subview here.
-      }
-    )
-  end  
-
-  def insert_egg
-    @egg_view ||= begin
-      egg_view = UIImageView.alloc.initWithFrame(@egg.hidden_frame)
-      egg_view.contentMode = UIViewContentModeScaleAspectFit
-      egg_view.image = UIImage.imageNamed(@egg.image_file)
-      egg_view
-    end
- 
-    # We want to add the view to the root view
-    UIApplication.sharedApplication.keyWindow.subviews.objectAtIndex(0).nextResponder.view.addSubview(@egg_view)
+    @egg.current_code = @egg.current_code[-8..-1] if @egg.current_code.size > 8
+    @egg.activate if @egg.secret_code == @egg.current_code
   end  
 
 end
