@@ -1,5 +1,5 @@
 class Egg
-  attr_accessor :number_touches, :secret_code, :current_code
+  attr_accessor :number_touches, :secret_code, :current_code, :image_file
 
   DEFAULT_TOUCHES = 1
   KONAMI = [
@@ -19,6 +19,10 @@ class Egg
 
   def secret_code
     @secret_code || KONAMI
+  end
+
+  def image_file
+    @image_file || "toasty.png"
   end
 
   def hidden_frame

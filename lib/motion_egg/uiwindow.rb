@@ -71,7 +71,9 @@ class UIWindow
       animations: lambda {
         @egg_view.frame = @egg.hidden_frame
       },
-      completion:nil
+      completion:lambda {|finished|
+        #consider removing egg subview here.
+      }
     )
   end  
 
@@ -79,7 +81,7 @@ class UIWindow
     @egg_view ||= begin
       egg_view = UIImageView.alloc.initWithFrame(@egg.hidden_frame)
       egg_view.contentMode = UIViewContentModeScaleAspectFit
-      egg_view.image = UIImage.imageNamed("toasty.png")
+      egg_view.image = UIImage.imageNamed(@egg.image_file)
       egg_view
     end
  
