@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 $:.unshift("/Library/RubyMotion/lib")
 require 'motion/project/template/ios'
-require './lib/motion_egg'
+require './lib/motion-egg'
 
 begin
   require 'bundler'
