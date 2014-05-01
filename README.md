@@ -16,8 +16,26 @@ This gem allows you hide a small bit of fun in any of your serious apps.
 Once the gem is included, call `add_egg` on the `UIWindow` created in `app_delegate.rb`
 
 ```ruby
+# This will add the an easter egg with all defaults
 @window.add_egg
+
+# This will add an easter egg with options
+@window.add_egg(number_touches: 2, image_file: "taco.png")
 ```
+
+The customizable options and defaults are:
+* **secret_code:** An array of UISwipeGestureRecognizer constants.  
+    * Default value `[
+    UISwipeGestureRecognizerDirectionUp, UISwipeGestureRecognizerDirectionUp, 
+    UISwipeGestureRecognizerDirectionDown, UISwipeGestureRecognizerDirectionDown, 
+    UISwipeGestureRecognizerDirectionLeft, UISwipeGestureRecognizerDirectionRight,
+    UISwipeGestureRecognizerDirectionLeft, UISwipeGestureRecognizerDirectionRight
+  ]`
+* **number_touches** Integer of how many touches are required when entering the code. 
+    * Default value `1`
+* **image_file** The string array of the image resource for the Easter egg.
+    * Default value `toasty.png`
+
 
 ## Installation
 
