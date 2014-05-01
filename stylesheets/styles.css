@@ -536,12 +536,12 @@ body {
   font-weight: normal;
   background: #c63627;
   background-attachment: fixed !important;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e26025), color-stop(100%, #c63627));
-  background: -webkit-linear-gradient(#e26025, #c63627);
-  background: -moz-linear-gradient(#e26025, #c63627);
-  background: -o-linear-gradient(#e26025, #c63627);
-  background: -ms-linear-gradient(#e26025, #c63627);
-  background: linear-gradient(#e26025, #c63627);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c63627), color-stop(100%, #e26025));
+  background: -webkit-linear-gradient(#c63627, #e26025);
+  background: -moz-linear-gradient(#c63627, #e26025);
+  background: -o-linear-gradient(#c63627, #e26025);
+  background: -ms-linear-gradient(#c63627, #e26025);
+  background: linear-gradient(#c63627, #e26025);
 }
 
 h1, h2, h3, h4, h5, h6 {
