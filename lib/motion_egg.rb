@@ -1,12 +1,9 @@
-require "motion_egg/version"
-
 unless defined?(Motion::Project::Config)
   raise "This file must be required within a RubyMotion project Rakefile."
 end
 
+lib_dir_path = File.dirname(File.expand_path(__FILE__))
 Motion::Project::App.setup do |app|
-  Dir.glob(File.join(File.dirname(__FILE__), 'motion_egg/*.rb')).each do |file|
-    app.files.unshift(file)
-  end
+  app.files.unshift(Dir.glob(File.join(lib_dir_path, "motion_egg/**/*.rb")))
   #app.frameworks += ["Twitter", "Accounts"]
 end
