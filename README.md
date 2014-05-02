@@ -1,5 +1,6 @@
 ![motion-egg-explain](./_art/motion-egg-explain.png)
 
+###[Github Page](http://gantman.github.io/motion-egg/)
 ## Wat?
 
 This gem allows you hide a small bit of fun in any of your serious apps.  
