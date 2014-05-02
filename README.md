@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/motion-egg.svg)](http://badge.fury.io/rb/motion-egg) 
+
 ![motion-egg-explain](./_art/motion-egg-explain.png)
 
 ###[Github Page](http://gantman.github.io/motion-egg/)
