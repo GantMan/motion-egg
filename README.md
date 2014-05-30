@@ -45,6 +45,10 @@ OR
 
 > 2. Add `gem 'motion-egg'` to your `Gemfile` and then bundle
 
+## Tests in Appium
+Run Appium `appium --app /Users/gantman/Documents/Projects/rubymotion/motion-egg/build/iPhoneSimulator-7.1-Development/motion-egg.app`
+Test `ruby spec/appium_test.rb`
+
 ## Pull Requests
 
 It would be really cool if you can think of ways to improve this gem, but keep it small and unintrusive!
