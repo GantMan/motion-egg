@@ -1,4 +1,4 @@
-[![Gem Version](https://badge.fury.io/rb/motion-egg.svg)](http://badge.fury.io/rb/motion-egg) 
+[![Gem Version](https://badge.fury.io/rb/motion-egg.svg)](http://badge.fury.io/rb/motion-egg)  ![Awesome](https://cdn.rawgit.com/GantMan/motion-egg/f44afdf55be0aa417818a9f0969068291b01a93f/_art/awesome.svg)
 
 ![motion-egg-explain](./_art/motion-egg-explain.png)
 
